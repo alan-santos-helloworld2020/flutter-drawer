@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 
+import '../cadastro/cadastro.dart';
+import '../home/home.dart';
+import '../login/login.dart';
+
 class MenuDrawer extends StatefulWidget {
   const MenuDrawer({super.key});
 
@@ -11,13 +15,14 @@ class _MenuDrawerState extends State<MenuDrawer> {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-
-      child: ListView(
+        child: MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: ListView(
         padding: EdgeInsets.zero,
         children: <Widget>[
           UserAccountsDrawerHeader(
-            accountName: const Text("Alan Paulo"),
-            accountEmail: const Text("alanprotesto@gmail.com"),
+            accountName: const Text("Admin paulo"),
+            accountEmail: const Text("adminpaulo@gmail.com"),
             currentAccountPicture: CircleAvatar(
               child: ClipOval(child: Image.asset("assets/images/logo.png")),
             ),
@@ -27,7 +32,9 @@ class _MenuDrawerState extends State<MenuDrawer> {
             title: const Text("Home-Page"),
             onTap: () {
               print("GO HOME");
-              Navigator.pushNamed(context, "/home");
+              // Navigator.pushNamed(context, "/home");
+              Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (context) => HomePage()));
             },
           ),
           ListTile(
@@ -35,11 +42,13 @@ class _MenuDrawerState extends State<MenuDrawer> {
             title: const Text("Cadastro-Page"),
             onTap: () {
               print("GO CADASTRO");
-              Navigator.pushNamed(context, "/cadastro");
+              // Navigator.pushNamed(context, "/cadastro");
+              Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => CadastroPage()));
             },
           ),
         ],
       ),
-    );
+    ));
   }
 }

@@ -17,11 +17,6 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      routes: {
-        "/login": (context) => const LoginPage(),
-        "/home": (context) => const HomePage(),
-        "/cadastro": (context) => const CadastroPage(),
-      },
       home: Scaffold(
         appBar: AppBar(centerTitle: true, title: const Text("Login")),
         body: Padding(
@@ -75,7 +70,8 @@ class _LoginPageState extends State<LoginPage> {
                         onPressed: () {
                           if (emailController.text == "admin@gmail.com" &&
                               passwordController.text == "admin123") {
-                            Navigator.pushNamed(context, "/home");
+                            Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => HomePage()));
                             emailController.clear();
                             passwordController.clear();
                           } else {

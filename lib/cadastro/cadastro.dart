@@ -16,11 +16,6 @@ class _CadastroPageState extends State<CadastroPage> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      routes: {
-        "/login": (context) => const LoginPage(),
-        "/home": (context) => const HomePage(),
-        "/cadastro": (context) => const CadastroPage(),
-      },
       home: Scaffold(
         drawer: const MenuDrawer(),
         appBar: AppBar(centerTitle: true, title: const Text("Cadastro"),),

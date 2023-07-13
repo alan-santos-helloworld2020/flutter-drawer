@@ -21,18 +21,15 @@ class _MainPageState extends State<MainPage> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       initialRoute: "/login",
-      routes: {
-        "/login": (context) => const LoginPage(),
-        "/home": (context) => const HomePage(),
-        "/cadastro": (context) => const CadastroPage(),
-      },
+      routes: {"/login": (context) => const LoginPage()},
       home: Scaffold(
-        drawer: const MenuDrawer(),        
+        drawer: const MenuDrawer(),
         appBar: AppBar(
           centerTitle: true,
-          title:const Text("onload",style: TextStyle(
-            color: Color.fromARGB(255, 255, 255, 255)
-          ),),
+          title: const Text(
+            "onload",
+            style: TextStyle(color: Color.fromARGB(255, 255, 255, 255)),
+          ),
         ),
       ),
     );
